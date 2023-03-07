@@ -33,13 +33,6 @@ public class Person implements Comparable<Person> {
         this.age = age;
     }
 
-    //    @Override
-//    public String toString() {
-//        return "name='" + name + '\'' +
-//                ", surname='" + surname + '\'' +
-//                ", age=" + age +
-//                '}';
-//    }
     @Override
     public String toString() {
         return name;

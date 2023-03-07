@@ -1,7 +1,5 @@
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
+import java.util.function.Predicate;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,11 +9,14 @@ public class Main {
                 new Person("Evgeni", "X Y Z G D L", 40),
                 new Person("Petr", "X Y", 155),
                 new Person("Georg", "X Y", 17),
-                new Person("Alex", "X-Y-Z", 22)
+                new Person("Alex", "X-Y-Z", 22),
+                new Person("Sasha", "A", 41),
+                new Person("Egor", "A", 15),
+                new Person("Julia", "A", 11)
         ));
-        Collections.sort(people);
-        System.out.println(people.toString());
-        Collections.sort(people, new PersonsSurnames(3));
-        System.out.println(people.toString());
+        Predicate<Person> predicate = x -> x.getAge() < 18;
+        people.removeIf(predicate);
+        System.out.println(people);
+
     }
 }
